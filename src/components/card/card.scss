@@ -1,0 +1,46 @@
+
+
+#card{
+    width: 120px;
+    height: 150px;
+    position: relative;
+    background: white;
+    transform: rotateY(180deg);
+    transform-style: preserve-3d; //imp
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    border-radius: 4px;
+
+
+    #back, >img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        //used to hide the backside when rotate
+        backface-visibility: hidden;
+
+    }
+
+    >img{
+        //just to minimize image 
+        transform: scale(0.7);
+    }
+    #back{
+        transform: rotateY(180deg);
+        border-radius: 3px;
+        background: url("../../assets/images/images.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 50%;
+    }
+
+    //lets implement classname
+    &.flipped{
+        transform: rotate(0deg);
+    }
+}
